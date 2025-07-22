@@ -18,7 +18,9 @@ class ProfileScreen extends StatelessWidget {
           ),
           SizedBox(height: 10,),
           Text("Reiner Zufall"),
-          Text("NPC", style: TextStyle(fontWeight: FontWeight.bold),)
+          Text("NPC", style: TextStyle(fontWeight: FontWeight.bold),),
+          SizedBox(height: 20),
+          Text("Hier kommt noch was", textAlign: TextAlign.justify, style: TextStyle(fontSize: 16),)
         ],
       ),
     );
