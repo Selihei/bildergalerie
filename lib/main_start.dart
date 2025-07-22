@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bildergalerie/screens/details.dart';
 import 'package:bildergalerie/screens/gallery.dart';
 import 'package:bildergalerie/screens/profile.dart';
+import 'package:bildergalerie/widgets.dart';
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
@@ -24,9 +25,12 @@ final List<Widget> screens = const [
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("Test"),),
-        body: screens[currentIndex],
+        backgroundColor: Colors.red[100],
+        appBar: buildAppBar("MyGallery"),
+        body:
+         screens[currentIndex],
         bottomNavigationBar: NavigationBar(
           selectedIndex: currentIndex,
           onDestinationSelected: (index) {
