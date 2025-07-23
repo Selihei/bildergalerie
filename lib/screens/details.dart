@@ -11,11 +11,9 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar("Details"),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+      body: Column(
           children: [
-            Image.asset(item.assetPath),
+            Image.asset(item.assetPath, width: double.infinity, height: 250,fit: BoxFit.cover),
             const SizedBox(height: 16),
             Text(
               item.title,
@@ -28,7 +26,6 @@ class DetailsScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }
