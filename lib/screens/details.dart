@@ -12,17 +12,28 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar("Details"),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(item.assetPath, width: double.infinity, height: 250,fit: BoxFit.cover),
+            Image.asset(item.assetPath, width: double.infinity, height: 450,fit: BoxFit.cover),
             const SizedBox(height: 16),
-            Text(
-              item.title,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              item.description ?? "",
-              style: const TextStyle(fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                item.title,
+                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+                  Text(item.imageDate ?? "", style: const TextStyle(fontWeight: FontWeight.bold),),
+                  const SizedBox(height: 8,),
+                  Text(
+                    item.description ?? "",
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

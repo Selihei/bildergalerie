@@ -27,7 +27,7 @@ class GalleryScreen extends StatelessWidget {
             );
           },
          child: Card(
-          
+          color: Colors.orange[100],
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
