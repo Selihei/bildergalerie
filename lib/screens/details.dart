@@ -27,16 +27,21 @@ class DetailsScreen extends StatelessWidget {
               ),
                   Text(item.imageDate ?? "", style: const TextStyle(fontWeight: FontWeight.bold),),
                   const SizedBox(height: 8,),
-                  Text(
-                    item.description ?? "",
-                    textAlign: TextAlign.left,
-                    style: const TextStyle(fontSize: 16),
+                  SizedBox(
+                  height: 200, // Höhe anpassbar je nach Layout
+                  child: SingleChildScrollView(
+                    child: Text(
+                      item.description ?? "",
+                      textAlign: TextAlign.justify,
+                      style: const TextStyle(fontSize: 16),
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 }
