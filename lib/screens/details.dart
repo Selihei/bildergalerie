@@ -11,37 +11,43 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar("Details"),
-      body: Column(
+     body: SingleChildScrollView(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(item.assetPath, width: double.infinity, height: 450,fit: BoxFit.cover),
-            const SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                item.title,
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-                  Text(item.imageDate ?? "", style: const TextStyle(fontWeight: FontWeight.bold),),
-                  const SizedBox(height: 8,),
-                  SizedBox(
-                  height: 200, // Höhe anpassbar je nach Layout
-                  child: SingleChildScrollView(
-                    child: Text(
-                      item.description ?? "",
-                      textAlign: TextAlign.justify,
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                  ),
+        children: [
+          Image.asset(
+            item.assetPath,
+            width: double.infinity,
+            height: 450,
+            fit: BoxFit.cover,
+          ),
+          const SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.title,
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  item.imageDate ?? "",
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  item.description ?? "",
+                  textAlign: TextAlign.left,
+                  style: const TextStyle(fontSize: 16),
                 ),
               ],
             ),
           ),
+          const SizedBox(height: 16),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
